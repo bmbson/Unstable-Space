@@ -40,11 +40,17 @@ ul {
 }
 
 li:hover {
-    background-color:#2d2f31a4;
+    background-color: #2d2f31a4;
     cursor: pointer;
 }
 
 footer {
     background-color: var(--main);
-    text-align: right;
+    display: flex;
+    justify-content: space-around;
 }
+
+.bottomLeftFooter {
+    margin: 0;
+}
+
