@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename='base.css')}}">
+    {% block css %} {% endblock %}
+    <title>{% block title%} {% endblock %}</title>
+</head>
+
+<body>
+    <header>
+        <div class="leftHeader">
+            <ul>
+                <li>Mixes</li>
+                <li>Blog</li>
+                <li>Gallery</li>
+            </ul>
+        </div>
+        <h1>Unstable Space</h1>
+        <div class="rightHeader">
+            <ul>
+                <li>About</li>
+                <li>Merch</li>
+                <li>Contact</li>
+            </ul>
+        </div>
+    </header>
+    <main>
+        {% block main %} {% endblock %}
+    </main>
+    <footer>
+        <div id="bottomLeftFooter">
+            <ul>
+                <li>© Unstable Space 2022</li>
+                <li>Privacy Policy</li>
+            </ul>
+        </div>
+        <div id="bottomRightFooter">
+        </div>
+    </footer>
+</body>
+
+</html>
