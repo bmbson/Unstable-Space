@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@1,300&display=swap');
 
 :root {
-    --main: #050B10;
+    --main: #030405;
     --text: #FBFEF9;
 }
 
@@ -28,6 +28,11 @@ header {
     align-items: center;
     background-color: var(--main);
     margin: 0;
+}
+
+main {
+    flex: 1;
+    display: flex;
 }
 
 ul {
