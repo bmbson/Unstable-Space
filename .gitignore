@@ -4,4 +4,11 @@ links
 __pycache__
 venv
 mixentryobject.md
+dist/
+build/
+*.egg-info/
+.pytest_cache/
+.coverage
+htmlcov/
+instance/
 
