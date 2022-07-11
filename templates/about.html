@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block css %} <link rel="stylesheet" href="{{ url_for('static', filename='about.css') }}"> {% endblock %}
+{% block title %} Unstable Space | About {% endblock %}
+
+{% block main %} 
+<div class="flexWrapper">
+    <div class="topContent"></div>
+    <div class="bottomContent">
+        <div class="textDiv">
+            <p>Online archive of mixes I or other people made, with a focus on underground music and genres.</p>
+            <p>I made this because I was bored.</p>
+            <p>Enjoy it or whatever? idk bruh.</p>
+        </div>
+        <div class="imgDiv"></div>
+    </div>
+</div>
+{% endblock %}

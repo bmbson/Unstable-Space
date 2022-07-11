@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{url_for('static', filename='base.css')}}">
     {% block css %} {% endblock %}
+    {% block js %}{% endblock %}
     <title>{% block title%} {% endblock %}</title>
 </head>
 
@@ -14,17 +15,17 @@
     <header>
         <div class="leftHeader">
             <ul>
-                <li>Mixes</li>
-                <li>Blog</li>
-                <li>Gallery</li>
+                <li><a href="{{url_for('mixes')}}">Mixes</a></li>
+                <li><a href="{{url_for('blog')}}">Blog</a></li>
+                <li><a href="{{url_for('gallery')}}">Gallery</a></li>
             </ul>
         </div>
-        <h1>Unstable Space</h1>
+        <a href="{{url_for('front')}}"><h1>Unstable Space</h1></a>
         <div class="rightHeader">
             <ul>
-                <li>About</li>
-                <li>Merch</li>
-                <li>Contact</li>
+                <li><a href="{{url_for('about')}}">About</a></li>
+                <li><a href="{{url_for('merch')}}">Merch</a></li>
+                <li><a href="{{url_for('secret')}}">Secret</a></li>
             </ul>
         </div>
     </header>
@@ -36,6 +37,7 @@
             <ul>
                 <li>© Unstable Space 2022</li>
                 <li>Privacy Policy</li>
+                <li><a href="{{url_for('contact')}}">Contact</a></li>
             </ul>
         </div>
     </footer>

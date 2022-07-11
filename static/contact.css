@@ -1,0 +1,23 @@
+main {
+    background-color: var(--main);
+    color: var(--text);
+}
+
+.flexWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.topContent {
+    background-image: url('img/blackspace.jpg');
+    height: 45vh;
+    width: 100%;
+    -webkit-filter: blur(2px);
+    filter: blur(2px);
+}
+
+.bottomContent {
+    
+}

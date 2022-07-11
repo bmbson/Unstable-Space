@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block css %} <link rel="stylesheet" href="{{ url_for('static', filename='mixes.css') }}"> {% endblock %}
+{% block js%}{% endblock %}
+{% block title %} Unstable Space | Secret {% endblock %}
+
+{% block main %} 
+<div class="flexWrapper">
+    <ul class="mixList">
+        <div class="selectionMenu">
+            <input type="text">
+   
+            <select name="series" id="">
+                <option value="xyz">xyz</option>
+                <option value="abc">abc</option>
+            </select>
+            <select name="selectBy" id="">
+                <option value="oldest">Sort by Oldest</option>
+                <option value="newest">Sort by Newest</option>
+            </select>
+        </div>
+        <li>
+            <div class="audioStreamWrapper">
+                <div class="audioStreamImage">image</div>
+                <div class="rightSide">
+                    <div class="topBar">
+                        <div class="playbackBar">song title</div>
+                    </div>
+                    <div class="middleBar">middleBar</div>
+                    <div class="bottomBar">
+                        <div class="playButton">play</div>
+                        <div class="volume">volume</div>
+                        <div class="download">DL</div>
+                        <div class="share">share</div>
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>
+
+{% endblock %}

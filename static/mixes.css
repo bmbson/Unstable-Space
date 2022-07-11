@@ -1,0 +1,83 @@
+main {
+    background-color: var(--main);
+}
+
+.selectionMenu {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.flexWrapper {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.mixList {
+    display: flex;
+    flex-direction: column;
+}
+
+.audioStreamWrapper {
+    display: flex;
+}
+
+.audioStreamImage {
+    width: 150px;
+    height: 150px;
+    background-color: rgb(54, 44, 44);
+}
+
+.audioStreamWrapper:hover {
+    cursor: auto;
+    background-color: none;
+}
+
+.topBar {
+    height: 30px;
+    width: 600px;
+    background-color: rgb(85, 100, 100);
+}
+
+.middleBar {
+    height: 70px;
+    width: 600px;
+    background-color: rgb(63, 56, 43);
+}
+
+.bottomBar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 50px;
+    width: 600px;
+    background-color: rgb(17, 16, 17);
+}
+
+.playButton {
+    height: 50px;
+    width: 50px;
+    background-color: rgb(44, 44, 42);
+}
+
+.volume {
+    height: 50px;
+    width: 200px;
+    background-color: rgb(75, 80, 78);
+}
+
+.download {
+    height: 50px;
+    width: 50px;
+    background-color: grey;
+}
+
+.share {
+    height: 50px;
+    width: 50px;
+    background-color: rgb(68, 66, 66);
+    align-self: flex-end;
+}
+
