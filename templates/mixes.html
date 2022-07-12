@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block css %} <link rel="stylesheet" href="{{ url_for('static', filename='mixes.css') }}"> {% endblock %}
-{% block js%}{% endblock %}
+{% block js%} <script src=></script> {% endblock %}
 {% block title %} Unstable Space | Secret {% endblock %}
 
 {% block main %} 
@@ -26,12 +26,15 @@
                     <div class="topBar">
                         <div class="playbackBar">song title</div>
                     </div>
-                    <div class="middleBar">middleBar</div>
+                    <div class="middleBar">
+                        <input class="progressBar" type="range" min="0" max="100">
+                    </div>
                     <div class="bottomBar">
-                        <div class="playButton">play</div>
-                        <div class="volume">volume</div>
-                        <div class="download">DL</div>
-                        <div class="share">share</div>
+                        <img class="playButton" src="{{ url_for('static', filename='img/controls/player-play.png')}}" alt="">
+                        <img class="mute" src="{{ url_for('static', filename='img/controls/mute.png')}}"" alt="">
+                        <input class="volume" type="range" min="0" max="100" value="70">
+                        <img class="download" src="{{ url_for('static', filename='img/controls/download.png')}}" alt="">
+                        <img class ="share" src="{{ url_for('static', filename='img/controls/share.png')}}" alt="">
                     </div>
                 </div>
             </div>
