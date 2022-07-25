@@ -53,4 +53,9 @@ def create_app(test_config=None):
     def secret():
         return render_template("secret.html")
 
+    @app.route("/admin")
+    def admin():
+        return render_template("admin.html")
+    
+
     return app

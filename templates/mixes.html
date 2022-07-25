@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block css %} <link rel="stylesheet" href="{{ url_for('static', filename='mixes.css') }}"> {% endblock %}
-{% block js%} <script src=></script> {% endblock %}
+{% block js%} <script src="{{ url_for('static', filename='js/audioElement.js') }}"></script> {% endblock %}
 {% block title %} Unstable Space | Secret {% endblock %}
 
 {% block main %} 
@@ -21,6 +21,7 @@
         </div>
         <li>
             <div class="audioStreamWrapper">
+                <audio id ="test" src="https://interactive-examples.mdn.mozilla.net/media/cc0-audio/t-rex-roar.mp3"></audio>
                 <div class="audioStreamImage">image</div>
                 <div class="rightSide">
                     <div class="topBar">

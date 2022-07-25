@@ -62,24 +62,28 @@ main {
     height: 50px;
     width: 50px;
     background-color: rgb(44, 44, 42);
+    cursor: pointer;
 }
 
 .volume {
     height: 50px;
     width: 200px;
     background-color: rgb(75, 80, 78);
+    cursor: ew-resize;
 }
 
 .mute {
     height: 50px;
     width: 50px;
     background-color: cornsilk;
+    cursor: pointer;
 }
 
 .download {
     height: 50px;
     width: 50px;
     background-color: grey;
+    cursor: pointer;
 }
 
 .share {
@@ -87,10 +91,12 @@ main {
     width: 50px;
     background-color: rgb(68, 66, 66);
     align-self: flex-end;
+    cursor: pointer;
 }
 
 .progressBar {
     -webkit-appearance: none;
     width: 100%;
-    
+    cursor: pointer;
 }
+
