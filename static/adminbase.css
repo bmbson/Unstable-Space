@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@1,300&display=swap');
+
+:root {
+    --main: #030405;
+    --text: #FBFEF9;
+}
+
+body {
+    height: 100vh;
+    margin: 0;
+    font-family: 'Nunito', sans-serif;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    color: white;
+}
+
+header ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+header li:hover{
+    background-color: grey;
+    cursor: pointer;
+}

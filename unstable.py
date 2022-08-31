@@ -1,8 +1,24 @@
 import os
 from flask import Flask, render_template
+from flask_sqlalchemy import SQLAlchemy
+from datetime import datetime
+
 
 def create_app(test_config=None):
     app = Flask(__name__)
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///mix.db'
+    
+    #init db
+    db = SQLAlchemy(app)
+    #mixes model for db
+    class Mixes(db.Model):
+        id = db.Column(db.Integer, primary_key=True)
+        mixTitle = db.Column(db.String(100), nullable=False)
+        mixDate = db.Column(db.DateTime, default=datetime.utcnow)
+
+        def __repr__(self):
+            return '<Name %r>' % self.id
+
     app.config.from_mapping(
         SECRET_KEY='dev',
         DATABASE=os.path.join(app.instance_path, 'flaskr.sqlite'),
@@ -55,7 +71,11 @@ def create_app(test_config=None):
 
     @app.route("/admin")
     def admin():
-        return render_template("admin.html")
+        return render_template("adminbase.html")
     
+    @app.route("/admin/create", methods=["POST","GET"])
+    def create():
+        return render_template("create.html")
+
 
     return app
