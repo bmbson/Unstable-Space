@@ -1,6 +1,6 @@
-{% extends 'base.html' %}
+{% extends 'main/base.html' %}
 
-{% block css %} <link rel="stylesheet" href="{{ url_for('static', filename='about.css') }}"> {% endblock %}
+{% block css %} {% load static %} <link rel="stylesheet" href="{% static '/main/about.css' %}"> {% endblock %}
 {% block title %} Unstable Space | About {% endblock %}
 
 {% block main %} 

@@ -1,7 +1,7 @@
-{% extends 'base.html' %}
+{% extends 'main/base.html' %}
 
-{% block css %} <link rel="stylesheet" href="{{ url_for('static', filename='mixes.css') }}"> {% endblock %}
-{% block js%} <script src="{{ url_for('static', filename='js/audioElement.js') }}"></script> {% endblock %}
+{% block css %} {% load static %}<link rel="stylesheet" href="{% static '/main/mixes.css' %}"> {% endblock %}
+{% block js%} {% endblock %}
 {% block title %} Unstable Space | Secret {% endblock %}
 
 {% block main %} 
@@ -31,11 +31,11 @@
                         <input class="progressBar" type="range" min="0" max="100">
                     </div>
                     <div class="bottomBar">
-                        <img class="playButton" src="{{ url_for('static', filename='img/controls/player-play.png')}}" alt="">
-                        <img class="mute" src="{{ url_for('static', filename='img/controls/mute.png')}}"" alt="">
+                        <img class="playButton" src="" alt="">
+                        <img class="mute" src="" alt="">
                         <input class="volume" type="range" min="0" max="100" value="70">
-                        <img class="download" src="{{ url_for('static', filename='img/controls/download.png')}}" alt="">
-                        <img class ="share" src="{{ url_for('static', filename='img/controls/share.png')}}" alt="">
+                        <img class="download" src="" alt="">
+                        <img class ="share" src="" alt="">
                     </div>
                 </div>
             </div>

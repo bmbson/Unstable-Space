@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{url_for('static', filename='base.css')}}">
+    {% load static %}
+    <link rel="stylesheet" href="{% static '/main/base.css' %}">
     {% block css %} {% endblock %}
     {% block js %}{% endblock %}
     <title>{% block title%} {% endblock %}</title>
@@ -15,17 +16,17 @@
     <header>
         <div class="leftHeader">
             <ul>
-                <li><a href="{{url_for('mixes')}}">Mixes</a></li>
-                <li><a href="{{url_for('blog')}}">Blog</a></li>
-                <li><a href="{{url_for('gallery')}}">Gallery</a></li>
+                <li><a href="{% url 'mixes' %}">Mixes</a></li>
+                <li><a href="{% url 'blog' %}">Blog</a></li>
+                <li><a href="{% url 'gallery' %}">Gallery</a></li>
             </ul>
         </div>
-        <a href="{{url_for('front')}}"><h1>Unstable Space</h1></a>
+        <a href="{% url 'frontpage' %}"><h1>Unstable Space</h1></a>
         <div class="rightHeader">
             <ul>
-                <li><a href="{{url_for('about')}}">About</a></li>
-                <li><a href="{{url_for('merch')}}">Merch</a></li>
-                <li><a href="{{url_for('secret')}}">Secret</a></li>
+                <li><a href="{% url 'about' %}">About</a></li>
+                <li><a href="">Merch</a></li>
+                <li><a href="{% url 'secret' %}">Secret</a></li>
             </ul>
         </div>
     </header>
@@ -37,7 +38,7 @@
             <ul>
                 <li>© Unstable Space 2022</li>
                 <li>Privacy Policy</li>
-                <li><a href="{{url_for('contact')}}">Contact</a></li>
+                <li><a href="{% url 'contact' %}">Contact</a></li>
             </ul>
         </div>
     </footer>
