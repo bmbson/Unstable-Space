@@ -51,8 +51,7 @@ header li:hover{
 }
 
 main {
-    background-color: beige;
-
+    background-color: transparent;
 }
 
 @keyframes animateBg {

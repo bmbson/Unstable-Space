@@ -1,1 +1,16 @@
 {% extends 'mixadmin/mixadminbase.html' %}
+{% block css %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'mixadmin/createmix.css' %}">
+{% endblock %}
+{% block title %}Create Mix{% endblock %}
+{% block main %}
+<div id="formWrap">
+    <form action="" method="post" id="form" form enctype="multipart/form-data">
+        <h3 id="wrapperTitle">Create Mix</h2>
+        {% csrf_token %}
+        {{ form }}
+        <input type="submit" value="Submit" id="submit">
+    </form>
+</div>
+{% endblock %}

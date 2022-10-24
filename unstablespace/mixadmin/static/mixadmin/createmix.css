@@ -1,0 +1,35 @@
+#form {
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(68, 68, 68, 0.336);
+    gap: 10px;
+    padding: 10px;
+    color: var(--text);
+}
+
+main {
+    display: flex;
+    justify-content: center;
+
+}
+
+#formWrap {
+    width: 500px;
+    padding: 20px;
+}
+
+#wrapperTitle {
+    text-align: center;
+}
+
+#submit {
+    background-color: grey;
+    color: var(--text);
+    border: none;
+    padding: 16px 16px;
+}
+
+#submit:hover {
+    background-color: rgb(156, 156, 156);
+    cursor: pointer;
+}
