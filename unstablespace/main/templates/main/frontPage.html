@@ -5,12 +5,22 @@
 
 {% block main %} 
 <div class="flexWrapper">
-    <div class="topContent" class="hoverGlow">
+    <a href=''>
+    <div class="topContent hoverGlow">
+        <div class="topContentText">
+            <a href="{% url 'mixes' %}">Mixes</a>
+        </div>
     </div>
     <div class="bottomContent">
-        <div class="bottomLeftContent">
+        <div class="bottomLeftContent hoverGlow" >
+            <div class="bottomLeftContentText">
+            <a href="{% url 'gallery' %}">Gallery</a>
+            </div>
         </div>
-        <div class="bottomRightContent">
+        <div class="bottomRightContent hoverGlow">
+            <div class="bottomRightContentText">
+                <a href="{% url 'about' %}">About</a>
+            </div>
         </div>
     </div>
 </div>

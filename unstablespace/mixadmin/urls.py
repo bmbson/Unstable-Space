@@ -7,5 +7,5 @@ urlpatterns = [
     path('createmix', views.createmix, name='createmix'),
     path('deletemix', views.deletemix, name='deletemix'),
     path('updatemix', views.updatemix, name='updatemix'),
-    path('uploadcomplete', views.uploadcomplete, name='uploadcomplete'),
+    path('uploadcomplete', views.uploadcomplete, name='uploadcomplete')
 ]

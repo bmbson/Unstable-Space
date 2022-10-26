@@ -1,8 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
 
 :root {
     --main: #030405;
     --text: #FBFEF9;
+    --texttransparant: #fbfef970;
 }
 
 h1 {

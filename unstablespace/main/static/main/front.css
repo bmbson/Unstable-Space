@@ -5,10 +5,22 @@
 }
 
 .topContent {
-    background-image: url('img/space.jpg');
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(90deg, rgb(57, 39, 121), rgb(0, 0, 0), rgb(57, 39, 121), rgb(0, 0, 0));
     height: 100%;
     width: 100%;
-    background-size: cover;
+    animation: animateBg 10s infinite linear;
+    background-size: 300% 100%;
+}
+
+.topContentText{
+    font-size: 60px;
+    text-shadow: 1px 2px 1px black;
+    font-family: 'Montserrat', sans-serif;
+    color: --var(--texttransparant);
 }
 
 .bottomContent {
@@ -17,15 +29,53 @@
 }
 
 .bottomLeftContent {
-    background-image: url('img/asteroid.jpg');
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(-135deg, rgb(28, 27, 25), rgb(0, 0, 0), rgb(28, 27, 25), rgb(0, 0, 0));
     height: 300px;
     width: 100%;
-    background-size: cover;
+    animation: animateBg 10s infinite linear;
+    background-size: 300% 100%;
+}
+
+.bottomLeftContentText{
+    font-size: 60px;
+    font-family: 'Montserrat', sans-serif;
+    text-shadow: 1px 2px 1px black;
+    color: --var(--texttransparant);
 }
 
 .bottomRightContent {
-    background-image: url('img/nebula.jpg');
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(45deg, rgb(28, 27, 25), rgb(0, 0, 0), rgb(28, 27, 25), rgb(0, 0, 0));
     height: 300px;
     width: 100%;
-    background-size: cover;
+    animation: animateBg 10s infinite linear;
+    background-size: 300% 100%;
+}
+
+.bottomRightContentText{
+    font-size: 60px;
+    font-family: 'Montserrat', sans-serif;
+    text-shadow: 1px 2px 1px black;
+    color: --var(--texttransparant);
+}
+
+@keyframes animateBg {
+    0% {
+      background-position: 0 0;
+    }
+    100% {
+      background-position: 100% 0;
+    }
+  }
+  
+.hoverGlow:hover {
+    opacity: 0.92;
+    cursor: pointer;
 }

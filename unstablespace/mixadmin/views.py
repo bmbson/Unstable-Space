@@ -1,7 +1,5 @@
-from cgitb import html
-from django.http import HttpResponseRedirect
-from django.shortcuts import render
-
+from django.shortcuts import HttpResponse, render
+from .models import MixModel
 from .forms import Mix
 
 # Create your views here.
@@ -12,7 +10,14 @@ def createmix(request):
     if request.method == "POST":
         form = Mix(request.POST, request.FILES)
         if form.is_valid():
-             return render(request, 'mixadmin/uploadcomplete.html')
+            title = request.POST.get('title')
+            image = request.POST.get('image')
+            audio = request.POST.get('audio')
+            tag = request.POST.get('tag')
+
+            mix = MixModel.objects.create(title=title, image=image, audio=audio, tag=tag)
+            mix.save()
+            return HttpResponse("Mix {} uploaded".format(str(mix.title)))
 
     else:
         form = Mix()
