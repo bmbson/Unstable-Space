@@ -23,8 +23,8 @@
         {% for MixModel in MixModel %}
         <li class='mixListItem'>
             <div class="audioStreamWrapper">
-                <audio id ="test" src="https://interactive-examples.mdn.mozilla.net/media/cc0-audio/t-rex-roar.mp3"></audio>
-                <div class="audioStreamImage">image</div>
+                <audio id ="test" src="{{ MixModel.audio.url }}"></audio>
+                <div class="audioStreamImage"><img src='{{ MixModel.image.url }}' class="thumbnailImage"></div>
                 <div class="rightSide">
                     <div class="topBar">
                         <div class="playbackBar">{{MixModel.title}}</div>

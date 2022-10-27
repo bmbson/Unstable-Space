@@ -11,4 +11,4 @@ urlpatterns = [
     path('about', views.about, name='about'),
     path('merch', views.merch, name='merch'),
     path('blog', views.blog, name='blog'),
-]
+] 

@@ -22,7 +22,7 @@ main {
 
 .audioStreamWrapper {
     display: flex;
-    border-color: white;
+    border-color: rgb(53, 53, 53);
     border-width: 10px;
     border-style: solid;
 }
@@ -36,7 +36,12 @@ main {
 .topBar {
     height: 30px;
     width: 600px;
-    background-color: rgb(85, 100, 100);
+    background-color: rgb(80, 80, 80);
+}
+
+.playbackBar {
+    margin-left: 10px;
+    font-size: 15px;
 }
 
 .middleBar {
@@ -44,7 +49,7 @@ main {
     justify-content: center;
     height: 70px;
     width: 600px;
-    background-color: rgb(63, 56, 43);
+    background-color: rgb(71, 71, 71);
 }
 
 .bottomBar {
@@ -59,7 +64,7 @@ main {
 .playButton {
     height: 50px;
     width: 50px;
-    background-color: rgb(44, 44, 42);
+    background-color: rgb(97, 97, 97);
     cursor: pointer;
 }
 
@@ -73,7 +78,7 @@ main {
 .mute {
     height: 50px;
     width: 50px;
-    background-color: cornsilk;
+    background-color: rgb(92, 92, 92);
     cursor: pointer;
 }
 
@@ -93,8 +98,13 @@ main {
 }
 
 .progressBar {
-    -webkit-appearance: none;
+    background-color: black;
     width: 100%;
     cursor: pointer;
 }
 
+.thumbnailImage {
+    height: 150px;
+    width: 150px;
+    object-fit: fill;
+}

@@ -14,7 +14,6 @@ def createmix(request):
             image = request.FILES['image']
             audio = request.FILES['audio']
             tag = request.POST.get('tag')
-
             mix = MixModel.objects.create(title=title, image=image, audio=audio, tag=tag)
             mix.save()
             return HttpResponse("Mix {} uploaded".format(str(mix.title)))
