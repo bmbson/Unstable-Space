@@ -2,7 +2,7 @@
 
 {% block css %} {% load static %}<link rel="stylesheet" href="{% static '/main/mixes.css' %}"> {% endblock %}
 {% block js%} {% endblock %}
-{% block title %} Unstable Space | Secret {% endblock %}
+{% block title %} Unstable Space | Mixes {% endblock %}
 
 {% block main %} 
 <div class="flexWrapper">
@@ -11,21 +11,23 @@
             <input type="text">
    
             <select name="series" id="">
-                <option value="xyz">xyz</option>
-                <option value="abc">abc</option>
+                {% for MixModel in MixModel %}
+                    <option value="{{ MixModel.tag }}">{{ MixModel.tag }}</option>
+                {% endfor %}
             </select>
             <select name="selectBy" id="">
                 <option value="oldest">Sort by Oldest</option>
                 <option value="newest">Sort by Newest</option>
             </select>
         </div>
-        <li>
+        {% for MixModel in MixModel %}
+        <li class='mixListItem'>
             <div class="audioStreamWrapper">
                 <audio id ="test" src="https://interactive-examples.mdn.mozilla.net/media/cc0-audio/t-rex-roar.mp3"></audio>
                 <div class="audioStreamImage">image</div>
                 <div class="rightSide">
                     <div class="topBar">
-                        <div class="playbackBar">song title</div>
+                        <div class="playbackBar">{{MixModel.title}}</div>
                     </div>
                     <div class="middleBar">
                         <input class="progressBar" type="range" min="0" max="100">
@@ -40,7 +42,7 @@
                 </div>
             </div>
         </li>
+        {% endfor %}
     </ul>
 </div>
-
 {% endblock %}

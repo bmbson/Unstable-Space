@@ -1,5 +1,5 @@
 from django.shortcuts import render
-
+from mixadmin.models import MixModel
 
 def frontPage(request):
     return render(request, 'main/frontPage.html')
@@ -14,7 +14,8 @@ def secret(request):
     return render(request, 'main/secret.html')
 
 def mixes(request):
-    return render(request, 'main/mixes.html')
+    context = {'MixModel':MixModel.objects.all()}
+    return render(request, 'main/mixes.html', context)
 
 def about(request):
     return render(request, 'main/about.html')

@@ -22,17 +22,15 @@ main {
 
 .audioStreamWrapper {
     display: flex;
+    border-color: white;
+    border-width: 10px;
+    border-style: solid;
 }
 
 .audioStreamImage {
     width: 150px;
     height: 150px;
     background-color: rgb(54, 44, 44);
-}
-
-.audioStreamWrapper:hover {
-    cursor: auto;
-    background-color: none;
 }
 
 .topBar {
