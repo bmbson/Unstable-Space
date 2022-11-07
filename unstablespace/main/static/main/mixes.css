@@ -58,7 +58,7 @@ main {
     justify-content: space-between;
     height: 50px;
     width: 600px;
-    background-color: rgb(17, 16, 17);
+    background-color: rgb(54, 54, 54);
 }
 
 .playButton {
@@ -100,7 +100,7 @@ main {
 .progressBar {
     background-color: black;
     width: 100%;
-    cursor: pointer;
+    cursor: ew-resize;
 }
 
 .thumbnailImage {

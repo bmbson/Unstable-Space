@@ -1,7 +1,6 @@
 {% extends 'main/base.html' %}
 
-{% block css %} {% load static %}<link rel="stylesheet" href="{% static '/main/mixes.css' %}"> {% endblock %}
-{% block js%} {% endblock %}
+{% block css %} {% load static %} <link rel="stylesheet" href="{% static '/main/mixes.css' %}"> {% endblock %}
 {% block title %} Unstable Space | Mixes {% endblock %}
 
 {% block main %} 
@@ -20,24 +19,25 @@
                 <option value="newest">Sort by Newest</option>
             </select>
         </div>
-        {% for MixModel in MixModel %}
+        {% for MixModel in MixModel  reversed %}
         <li class='mixListItem'>
             <div class="audioStreamWrapper">
-                <audio id ="test" src="{{ MixModel.audio.url }}"></audio>
+                <audio class="audio" src="{{ MixModel.audio.url }}" id="{{ MixModel.key }}"></audio>
                 <div class="audioStreamImage"><img src='{{ MixModel.image.url }}' class="thumbnailImage"></div>
                 <div class="rightSide">
                     <div class="topBar">
                         <div class="playbackBar">{{MixModel.title}}</div>
                     </div>
                     <div class="middleBar">
-                        <input class="progressBar" type="range" min="0" max="100">
+                        <input class="progressBar" type="range" class="time">
                     </div>
                     <div class="bottomBar">
-                        <img class="playButton" src="" alt="">
-                        <img class="mute" src="" alt="">
-                        <input class="volume" type="range" min="0" max="100" value="70">
-                        <img class="download" src="" alt="">
-                        <img class ="share" src="" alt="">
+                        {% load static %} 
+                        <img class="playButton" src="{% static 'main/img/controls/player-play.png' %}" alt="">
+                        <img class="mute" src="{% static 'main/img/controls/mute.png' %}" alt="">
+                        <input class="volume" type="range" class="time">
+                        <img class="download" src="{% static 'main/img/controls/download.png' %}" alt="">
+                        <img class ="share" src="{% static 'main/img/controls/share.png' %}" alt="">
                     </div>
                 </div>
             </div>
@@ -46,3 +46,4 @@
     </ul>
 </div>
 {% endblock %}
+{% block js%} {% load static %} <script type="text/javascript" src="{% static '/main/js/audioElement.js' %}"></script>{% endblock %}
