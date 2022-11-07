@@ -20,10 +20,10 @@
                 <option value="newest">Sort by Newest</option>
             </select>
         </div>
-        {% for MixModel in MixModel %}
+        {% for MixModel in MixModel reversed %}
         <li class='mixListItem'>
             <div class="audioStreamWrapper">
-                <audio id ="test" src="{{ MixModel.audio.url }}"></audio>
+                <audio class="audioFile" src="{{ MixModel.audio.url }}" preload="metadata"></audio>
                 <div class="audioStreamImage"><img src='{{ MixModel.image.url }}' class="thumbnailImage"></div>
                 <div class="rightSide">
                     <div class="topBar">
