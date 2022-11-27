@@ -22,7 +22,7 @@
         {% for MixModel in MixModel  reversed %}
         <li class='mixListItem'>
             <div class="audioStreamWrapper">
-                <audio class="audio" src="{{ MixModel.audio.url }}" id="{{ MixModel.key }}"></audio>
+                <audio class="audio" src="{{ MixModel.audio.url }}" id="{{ MixModel.id }}"></audio>
                 <div class="audioStreamImage"><img src='{{ MixModel.image.url }}' class="thumbnailImage"></div>
                 <div class="rightSide">
                     <div class="topBar">

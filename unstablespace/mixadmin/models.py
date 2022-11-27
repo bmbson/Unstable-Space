@@ -9,4 +9,3 @@ class MixModel(models.Model):
     image = models.ImageField(upload_to='images/')
     audio = models.FileField(upload_to='audio/')
     tag = models.CharField(max_length=50)
-    
