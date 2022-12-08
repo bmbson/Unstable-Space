@@ -98,10 +98,37 @@ main {
 }
 
 .progressBar {
+    -webkit-appearance: none;
     background-color: black;
     width: 100%;
     cursor: ew-resize;
 }
+
+.progressBar:focus {
+    outline: none;
+}
+
+.progressBar::-webkit-slider-runnable-track {
+    background: rgb(255, 255, 255);
+    height: 5px;
+}
+
+.progressBar::-moz-range-track {
+    background: rgb(255, 255, 255);
+    height: 100%;
+}
+
+.progressBar::-moz-range-thumb {
+    height: 100%;
+    width: 2px;
+    background: rgb(121, 121, 121);
+}
+
+.progressBar::-moz-range-progress {
+    background-color: rgb(10, 29, 136);
+    height: 100%;
+}
+
 
 .thumbnailImage {
     height: 150px;
