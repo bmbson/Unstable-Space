@@ -66,3 +66,8 @@ a {
     color: var(--text);
 }
 
+#ustspa:hover {
+    cursor: default;
+    background-color: transparent;
+}
+

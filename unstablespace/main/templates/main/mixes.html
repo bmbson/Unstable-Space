@@ -7,14 +7,14 @@
 <div class="flexWrapper">
     <ul class="mixList">
         <div class="selectionMenu">
-            <input type="text">
+            <input type="text" id="searchBar">
    
-            <select name="series" id="">
+            <select name="series" id="dropDownTags">
                 {% for MixModel in MixModel %}
                     <option value="{{ MixModel.tag }}">{{ MixModel.tag }}</option>
                 {% endfor %}
             </select>
-            <select name="selectBy" id="">
+            <select name="selectBy" id="sortBy">
                 <option value="oldest">Sort by Oldest</option>
                 <option value="newest">Sort by Newest</option>
             </select>
@@ -36,6 +36,7 @@
                         <img class="playButton" src="{% static 'main/img/controls/player-play.png' %}" alt="">
                         <img class="mute" src="{% static 'main/img/controls/mute.png' %}" alt="">
                         <input class="volume" type="range" class="time">
+                        <div id="timer">00:00</div>
                         <img class="download" src="{% static 'main/img/controls/download.png' %}" alt="">
                         <img class ="share" src="{% static 'main/img/controls/share.png' %}" alt="">
                     </div>

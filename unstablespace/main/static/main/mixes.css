@@ -8,6 +8,11 @@ main {
     justify-content: space-between;
 }
 
+.rightSide {
+    display: flex;
+    flex-direction: column;
+}
+
 .flexWrapper {
     width: 100%;
     display: flex;
@@ -20,23 +25,27 @@ main {
     flex-direction: column;
 }
 
+/*
+geluid op hover zetten zou hard zijn.
+*/
 .audioStreamWrapper {
     display: flex;
-    border-color: rgb(53, 53, 53);
-    border-width: 10px;
+    border-color: #272b2c3f;
+    border-width: 5px;
     border-style: solid;
 }
 
 .audioStreamImage {
     width: 150px;
     height: 150px;
-    background-color: rgb(54, 44, 44);
 }
 
 .topBar {
-    height: 30px;
+    height: 35px;
     width: 600px;
-    background-color: rgb(80, 80, 80);
+    background-color: #323234;
+    display: flex;
+    align-items: center;
 }
 
 .playbackBar {
@@ -47,52 +56,53 @@ main {
 .middleBar {
     display: flex;
     justify-content: center;
-    height: 70px;
+    height: 75px;
     width: 600px;
-    background-color: rgb(71, 71, 71);
+    background-color: #323234;
 }
 
 .bottomBar {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    height: 50px;
+    height: 40px;
     width: 600px;
-    background-color: rgb(54, 54, 54);
+    background-color: #323234;
+    align-self: flex-end;
 }
 
 .playButton {
-    height: 50px;
-    width: 50px;
-    background-color: rgb(97, 97, 97);
+    height: 40px;
+    width: 40px;
+    background-color: #323234;
     cursor: pointer;
 }
 
 .volume {
-    height: 50px;
+    height: 40px;
     width: 200px;
-    background-color: rgb(75, 80, 78);
+    background-color: #323234;
     cursor: ew-resize;
 }
 
 .mute {
-    height: 50px;
-    width: 50px;
-    background-color: rgb(92, 92, 92);
+    height: 40px;
+    width: 40px;
+    background-color:#323234;
     cursor: pointer;
 }
 
 .download {
-    height: 50px;
-    width: 50px;
-    background-color: grey;
+    height: 40px;
+    width: 40px;
+    background-color: #323234;
     cursor: pointer;
 }
 
 .share {
-    height: 50px;
-    width: 50px;
-    background-color: rgb(68, 66, 66);
+    height: 40px;
+    width: 40px;
+    background-color: #323234;
     align-self: flex-end;
     cursor: pointer;
 }
@@ -102,6 +112,7 @@ main {
     background-color: black;
     width: 100%;
     cursor: ew-resize;
+    flex-grow: 1;
 }
 
 .progressBar:focus {
@@ -125,13 +136,81 @@ main {
 }
 
 .progressBar::-moz-range-progress {
-    background-color: rgb(10, 29, 136);
+    background-color: rgb(26, 26, 27);
     height: 100%;
 }
-
 
 .thumbnailImage {
     height: 150px;
     width: 150px;
     object-fit: fill;
+}
+
+#timer {
+    display: flex;
+    align-items: center;
+}
+
+.volume[type="range"] {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.volume[type="range"]:focus {
+    outline: none;
+}
+
+.volume[type="range"]::-webkit-slider-runnable-track {
+    background: rgb(26, 26, 27);
+    height: 5px;
+}
+   
+.volume[type="range"]::-moz-range-track {
+    background: rgb(255, 255, 255);
+    height: 5px;
+}
+   
+.volume[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 15px;
+    width: 15px;
+    background: rgb(26, 26, 27);
+    margin-top: -5px;
+    border-radius: 50%;
+}
+   
+.volume[type="range"]::-moz-range-thumb {
+    height: 15px;
+    width: 15px;
+    background: rgb(26, 26, 27);
+    margin-top: -5px;
+    border-radius: 50%;
+}
+
+.volume::-moz-range-progress {
+    background-color: rgb(26, 26, 27);
+    height: 10px;
+}
+   
+#searchBar {
+    color: white;
+    background-color: #323234;
+    border: none;
+}
+
+#searchBar:focus {
+    outline: none;
+}
+
+#dropDownTags {
+    color: white;
+    background-color: #323234;
+    border: none;
+    padding: 5px;
+}
+
+#sortBy {
+    color: white;
+    background-color: #323234;
+    border: none;
 }

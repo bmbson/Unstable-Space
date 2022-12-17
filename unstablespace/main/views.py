@@ -25,3 +25,6 @@ def merch(request):
 
 def blog(request):
     return render(request, 'main/blog.html')
+
+def privacypolicy(request):
+    return render(request, 'main/privacypolicy.html')
