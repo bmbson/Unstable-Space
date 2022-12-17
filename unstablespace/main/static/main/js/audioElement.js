@@ -8,12 +8,24 @@ let share = document.querySelector(".share");
 let mute = document.querySelector(".mute");
 let audios = document.querySelectorAll('.audio');
 let ids = document.querySelectorAll('id')
+let timers = document.querySelector('.timer')
 
 //test elements will be migrated to a db
 
 function playAudio() {
     audio = this.closest('.rightSide').previousElementSibling.previousElementSibling;
-    audio.play();
+    if (audio.paused) {
+        audio.play();
+      } else {
+        audio.pause();
+      }
+};
+
+function calculateTime(secs) {
+    const minutes = Math.floor(secs / 60);
+    const seconds = Math.floor(secs % 60);
+    const returnedSeconds = seconds < 10 ? `0${seconds}` : `${seconds}`;
+    return `${minutes}:${returnedSeconds}`;
 };
 
 playButtons.forEach(playButton => {
@@ -32,10 +44,19 @@ volumeButtons.forEach(volumeButton => {
 audios.forEach(audio => {
     audio.addEventListener('timeupdate', (event) => {
         progressBar = audio.closest('.audioStreamWrapper').querySelector('.rightSide').querySelector('.middleBar').querySelector('.progressBar')
-        console.log(progressBar);
         const currentTime = audio.currentTime;
         const duration = audio.duration;
         const progressBarPosition = (currentTime / duration) * 100;
         progressBar.value = progressBarPosition;
     })
 })
+
+audios.forEach(audio => {
+    audio.addEventListener('timeupdate', (event) => {
+        timer = audio.closest('.audioStreamWrapper').querySelector('.rightSide').querySelector('.bottomBar').querySelector('.timer');
+        timer.innerHTML = String(calculateTime(audio.currentTime)) + " / " + String(calculateTime(audio.duration));
+    })
+})
+
+
+

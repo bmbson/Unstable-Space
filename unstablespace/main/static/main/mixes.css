@@ -146,7 +146,7 @@ geluid op hover zetten zou hard zijn.
     object-fit: fill;
 }
 
-#timer {
+.timer {
     display: flex;
     align-items: center;
 }

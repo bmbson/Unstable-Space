@@ -22,21 +22,21 @@
         {% for MixModel in MixModel  reversed %}
         <li class='mixListItem'>
             <div class="audioStreamWrapper">
-                <audio class="audio" src="{{ MixModel.audio.url }}" id="{{ MixModel.id }}"></audio>
+                <audio class="audio" src="{{ MixModel.audio.url }}" id="{{ MixModel.id }}" state="paused"></audio>
                 <div class="audioStreamImage"><img src='{{ MixModel.image.url }}' class="thumbnailImage"></div>
                 <div class="rightSide">
                     <div class="topBar">
                         <div class="playbackBar">{{MixModel.title}}</div>
                     </div>
                     <div class="middleBar">
-                        <input class="progressBar" type="range" class="time">
+                        <input class="progressBar" type="range" class="time" value="0">
                     </div>
                     <div class="bottomBar">
                         {% load static %} 
                         <img class="playButton" src="{% static 'main/img/controls/player-play.png' %}" alt="">
                         <img class="mute" src="{% static 'main/img/controls/mute.png' %}" alt="">
-                        <input class="volume" type="range" class="time">
-                        <div id="timer">00:00</div>
+                        <input class="volume" type="range" class="time" value="75">
+                        <div class="timer">0:00 / 0:00</div>
                         <img class="download" src="{% static 'main/img/controls/download.png' %}" alt="">
                         <img class ="share" src="{% static 'main/img/controls/share.png' %}" alt="">
                     </div>
