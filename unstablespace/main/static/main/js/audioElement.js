@@ -32,7 +32,6 @@ playButtons.forEach(playButton => {
     playButton.addEventListener('click', playAudio, false);
 });
 
-
 volumeButtons.forEach(volumeButton => {
     volumeButton.addEventListener('input', () => {
         audio = volumeButton.closest('.rightSide').previousElementSibling.previousElementSibling;
@@ -49,14 +48,21 @@ audios.forEach(audio => {
         const progressBarPosition = (currentTime / duration) * 100;
         progressBar.value = progressBarPosition;
     })
-})
+});
+
+audios.forEach(audio => {
+    progressBar = audio.closest('.audioStreamWrapper').querySelector('.rightSide').querySelector('.middleBar').querySelector('.progressBar')
+    progressBar.addEventListener("input", (event) => {
+        audio.currentTime = (progressBar.value / 100) * audio.duration
+    })
+});
 
 audios.forEach(audio => {
     audio.addEventListener('timeupdate', (event) => {
         timer = audio.closest('.audioStreamWrapper').querySelector('.rightSide').querySelector('.bottomBar').querySelector('.timer');
         timer.innerHTML = String(calculateTime(audio.currentTime)) + " / " + String(calculateTime(audio.duration));
     })
-})
+});
 
 
 
