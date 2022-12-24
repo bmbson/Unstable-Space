@@ -79,15 +79,7 @@ geluid op hover zetten zou hard zijn.
     height: 40px;
     width: 40px;
     background-color: #323234;
-<<<<<<< HEAD
-}
-
-.playButton:hover {
     cursor: pointer;
-    background-color: #4d4d4e;
-=======
-    cursor: pointer;
->>>>>>> parent of 2088e7b... removed all media files bcs github 100mb limit.
 }
 
 .volume {
@@ -104,12 +96,6 @@ geluid op hover zetten zou hard zijn.
     cursor: pointer;
 }
 
-<<<<<<< HEAD
-.mute:hover {
-    background-color: #4d4d4e;
-}
-=======
->>>>>>> parent of 2088e7b... removed all media files bcs github 100mb limit.
 .download {
     height: 40px;
     width: 40px;
@@ -117,13 +103,6 @@ geluid op hover zetten zou hard zijn.
     cursor: pointer;
 }
 
-<<<<<<< HEAD
-.download:hover {
-    background-color:  #4d4d4e;
-}
-
-=======
->>>>>>> parent of 2088e7b... removed all media files bcs github 100mb limit.
 .share {
     height: 40px;
     width: 40px;
@@ -132,13 +111,6 @@ geluid op hover zetten zou hard zijn.
     cursor: pointer;
 }
 
-<<<<<<< HEAD
-.share:hover {
-    background-color:  #4d4d4e;
-}
-
-=======
->>>>>>> parent of 2088e7b... removed all media files bcs github 100mb limit.
 .progressBar {
     -webkit-appearance: none;
     background-color: black;
