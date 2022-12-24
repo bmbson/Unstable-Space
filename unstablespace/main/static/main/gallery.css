@@ -1,0 +1,22 @@
+main {
+    background-color: var(--main);
+}
+
+.flexWrapper {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 25px 25px;
+    width: 100%;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.image {
+    height: 400px;
+    width: 400px;
+}
+
+.image:hover {
+    opacity: 0.7;
+    cursor: pointer;
+}

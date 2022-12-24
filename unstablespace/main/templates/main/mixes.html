@@ -1,0 +1,50 @@
+{% extends 'main/base.html' %}
+
+{% block css %} {% load static %} <link rel="stylesheet" href="{% static '/main/mixes.css' %}"> {% endblock %}
+{% block title %} Unstable Space | Mixes {% endblock %}
+
+{% block main %} 
+<div class="flexWrapper">
+    <ul class="mixList">
+        <div class="selectionMenu">
+            <input type="text" id="searchBar">
+   
+            <select name="series" id="dropDownTags">
+                {% for MixModel in MixModel %}
+                    <option value="{{ MixModel.tag }}">{{ MixModel.tag }}</option>
+                {% endfor %}
+            </select>
+            <select name="selectBy" id="sortBy">
+                <option value="oldest">Sort by Oldest</option>
+                <option value="newest">Sort by Newest</option>
+            </select>
+        </div>
+        {% for MixModel in MixModel  reversed %}
+        <li class='mixListItem'>
+            <div class="audioStreamWrapper">
+                <audio class="audio" src="{{ MixModel.audio.url }}" id="{{ MixModel.id }}" state="paused"></audio>
+                <div class="audioStreamImage"><img src='{{ MixModel.image.url }}' class="thumbnailImage"></div>
+                <div class="rightSide">
+                    <div class="topBar">
+                        <div class="playbackBar">{{MixModel.title}}</div>
+                    </div>
+                    <div class="middleBar">
+                        <input class="progressBar" type="range" class="time" value="0">
+                    </div>
+                    <div class="bottomBar">
+                        {% load static %} 
+                        <img class="playButton" src="{% static 'main/img/controls/player-play.png' %}" alt="">
+                        <img class="mute" src="{% static 'main/img/controls/mute.png' %}" alt="">
+                        <input class="volume" type="range" class="time" value="75">
+                        <div class="timer">0:00 / 0:00</div>
+                        <img class="download" src="{% static 'main/img/controls/download.png' %}" alt="">
+                        <img class ="share" src="{% static 'main/img/controls/share.png' %}" alt="">
+                    </div>
+                </div>
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}
+{% block js%} {% load static %} <script type="text/javascript" src="{% static '/main/js/audioElement.js' %}"></script>{% endblock %}

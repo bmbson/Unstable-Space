@@ -1,0 +1,18 @@
+{% extends 'main/base.html' %}
+
+{% block css %} {% load static %} <link rel="stylesheet" href="{% static '/main/gallery.css' %}"> {% endblock %}
+{% block js%} {% endblock %}
+{% block title %} Unstable Space | Secret {% endblock %}
+
+{% block main %} 
+<div class="flexWrapper">
+    <img id="1" class="image" src="{% static 'main/img/space.jpg' %}" alt="">
+    <img id="2" class="image" src="{% static 'main/img/space.jpg' %}" alt="">
+    <img id="3" class="image" src="{% static 'main/img/space.jpg' %}" alt="">
+    <img id="4" class="image" src="{% static 'main/img/space.jpg' %}" alt="">
+</div>
+<div id="fullscreenView">
+    <div class="caption"></div>
+</div>
+
+{% endblock %}
