@@ -79,11 +79,7 @@ geluid op hover zetten zou hard zijn.
     height: 40px;
     width: 40px;
     background-color: #323234;
-}
-
-.playButton:hover {
     cursor: pointer;
-    background-color: #4d4d4e;
 }
 
 .volume {
@@ -100,18 +96,11 @@ geluid op hover zetten zou hard zijn.
     cursor: pointer;
 }
 
-.mute:hover {
-    background-color: #4d4d4e;
-}
 .download {
     height: 40px;
     width: 40px;
     background-color: #323234;
     cursor: pointer;
-}
-
-.download:hover {
-    background-color:  #4d4d4e;
 }
 
 .share {
@@ -120,10 +109,6 @@ geluid op hover zetten zou hard zijn.
     background-color: #323234;
     align-self: flex-end;
     cursor: pointer;
-}
-
-.share:hover {
-    background-color:  #4d4d4e;
 }
 
 .progressBar {
