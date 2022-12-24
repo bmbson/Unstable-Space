@@ -1,0 +1,235 @@
+main {
+    background-color: var(--main);
+}
+
+li:hover {
+    cursor: auto;
+}
+
+.selectionMenu {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.rightSide {
+    display: flex;
+    flex-direction: column;
+}
+
+.flexWrapper {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.mixList {
+    display: flex;
+    flex-direction: column;
+}
+
+/*
+geluid op hover zetten zou hard zijn.
+*/
+.audioStreamWrapper {
+    display: flex;
+    border-color: #272b2c3f;
+    border-width: 5px;
+    border-style: solid;
+}
+
+.audioStreamImage {
+    width: 150px;
+    height: 150px;
+}
+
+.topBar {
+    height: 35px;
+    width: 600px;
+    background-color: #323234;
+    display: flex;
+    align-items: center;
+}
+
+.playbackBar {
+    margin-left: 10px;
+    font-size: 15px;
+}
+
+.middleBar {
+    display: flex;
+    justify-content: center;
+    height: 75px;
+    width: 600px;
+    background-color: #323234;
+}
+
+.bottomBar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 40px;
+    width: 600px;
+    background-color: #323234;
+    align-self: flex-end;
+}
+
+.playButton {
+    height: 40px;
+    width: 40px;
+    background-color: #323234;
+}
+
+.playButton:hover {
+    cursor: pointer;
+    background-color: #4d4d4e;
+}
+
+.volume {
+    height: 40px;
+    width: 200px;
+    background-color: #323234;
+    cursor: ew-resize;
+}
+
+.mute {
+    height: 40px;
+    width: 40px;
+    background-color:#323234;
+    cursor: pointer;
+}
+
+.mute:hover {
+    background-color: #4d4d4e;
+}
+.download {
+    height: 40px;
+    width: 40px;
+    background-color: #323234;
+    cursor: pointer;
+}
+
+.download:hover {
+    background-color:  #4d4d4e;
+}
+
+.share {
+    height: 40px;
+    width: 40px;
+    background-color: #323234;
+    align-self: flex-end;
+    cursor: pointer;
+}
+
+.share:hover {
+    background-color:  #4d4d4e;
+}
+
+.progressBar {
+    -webkit-appearance: none;
+    background-color: black;
+    width: 100%;
+    cursor: ew-resize;
+    flex-grow: 1;
+}
+
+.progressBar:focus {
+    outline: none;
+}
+
+.progressBar::-webkit-slider-runnable-track {
+    background: rgb(255, 255, 255);
+    height: 5px;
+}
+
+.progressBar::-moz-range-track {
+    background: rgb(255, 255, 255);
+    height: 100%;
+}
+
+.progressBar::-moz-range-thumb {
+    height: 100%;
+    width: 2px;
+    background: rgb(121, 121, 121);
+}
+
+.progressBar::-moz-range-progress {
+    background-color: rgb(26, 26, 27);
+    height: 100%;
+}
+
+.thumbnailImage {
+    height: 150px;
+    width: 150px;
+    object-fit: fill;
+}
+
+.timer {
+    display: flex;
+    align-items: center;
+}
+
+.volume[type="range"] {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.volume[type="range"]:focus {
+    outline: none;
+}
+
+.volume[type="range"]::-webkit-slider-runnable-track {
+    background: rgb(26, 26, 27);
+    height: 5px;
+}
+   
+.volume[type="range"]::-moz-range-track {
+    background: rgb(255, 255, 255);
+    height: 5px;
+}
+   
+.volume[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 15px;
+    width: 15px;
+    background: rgb(26, 26, 27);
+    margin-top: -5px;
+    border-radius: 50%;
+}
+   
+.volume[type="range"]::-moz-range-thumb {
+    height: 15px;
+    width: 15px;
+    background: rgb(26, 26, 27);
+    margin-top: -5px;
+    border-radius: 50%;
+}
+
+.volume::-moz-range-progress {
+    background-color: rgb(26, 26, 27);
+    height: 10px;
+}
+   
+#searchBar {
+    color: white;
+    background-color: #323234;
+    border: none;
+}
+
+#searchBar:focus {
+    outline: none;
+}
+
+#dropDownTags {
+    color: white;
+    background-color: #323234;
+    border: none;
+    padding: 5px;
+}
+
+#sortBy {
+    color: white;
+    background-color: #323234;
+    border: none;
+}
