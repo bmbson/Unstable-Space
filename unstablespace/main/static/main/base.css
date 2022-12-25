@@ -51,6 +51,10 @@ li:hover {
     cursor: pointer;
 }
 
+.topMenuButtons {
+    cursor: hover;
+}
+
 footer {
     background-color: var(--main);
     display: flex;

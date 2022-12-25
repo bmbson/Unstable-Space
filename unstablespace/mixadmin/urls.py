@@ -8,4 +8,4 @@ urlpatterns = [
     path('deletemix', views.deletemix, name='deletemix'),
     path('updatemix', views.updatemix, name='updatemix'),
     path('uploadcomplete', views.uploadcomplete, name='uploadcomplete')
-]
+    ]

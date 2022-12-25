@@ -5,7 +5,7 @@ let playButtons = document.querySelectorAll(".playButton");
 let download = document.querySelector(".download");
 let volumeButtons = document.querySelectorAll(".volume");
 let share = document.querySelector(".share");
-let mute = document.querySelector(".mute");
+let mute = document.querySelectorAll(".mute");
 let audios = document.querySelectorAll('.audio');
 let ids = document.querySelectorAll('id')
 let timers = document.querySelector('.timer')
@@ -14,10 +14,27 @@ let timers = document.querySelector('.timer')
 
 function playAudio() {
     audio = this.closest('.rightSide').previousElementSibling.previousElementSibling;
+    image = this
+    console.log(image)
     if (audio.paused) {
         audio.play();
+        this.src = "/static/main/img/controls/player-play.png";
       } else {
         audio.pause();
+        this.src = "/static/main/img/controls/player-pause.png";
+      }
+};
+
+function muteAudio(element) {
+    audio = element.closest('.rightSide').previousElementSibling.previousElementSibling;
+    image = element.src
+    
+    if (audio.muted == false) {
+        audio.muted = true
+        element.src = "/static/main/img/controls/mute.png";
+      } else if (audio.muted == true) {
+        audio.muted = false
+        element.src = "/static/main/img/controls/high-volume.png";
       }
 };
 
@@ -64,6 +81,4 @@ audios.forEach(audio => {
     })
 });
 
-
-
- 
+mute.forEach(element => element.addEventListener('click', () => {muteAudio(element);}, ))

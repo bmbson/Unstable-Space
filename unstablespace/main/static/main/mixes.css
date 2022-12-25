@@ -6,6 +6,10 @@ li:hover {
     cursor: auto;
 }
 
+.topMenuButtons:hover {
+    cursor: pointer;
+}
+
 .selectionMenu {
     display: flex;
     flex-direction: row;
