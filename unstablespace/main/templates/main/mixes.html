@@ -33,11 +33,11 @@
                     </div>
                     <div class="bottomBar">
                         {% load static %} 
-                        <img class="playButton" src="{% static 'main/img/controls/player-pause.png' %}" alt="">
+                        <img class="playButton" src="{% static 'main/img/controls/player-play.png' %}" alt="">
                         <img class="mute" src="{% static 'main/img/controls/high-volume.png' %}" alt="">
                         <input class="volume" type="range" class="time" value="75">
                         <div class="timer">0:00 / 0:00</div>
-                        <img class="download" src="{% static 'main/img/controls/download.png' %}" alt="">
+                        <a href="{{ MixModel.audio.url }}" download><img class="download" src="{% static 'main/img/controls/download.png' %}" alt=""></a>
                         <img class ="share" src="{% static 'main/img/controls/share.png' %}" alt="">
                     </div>
                 </div>

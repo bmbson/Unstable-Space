@@ -2,7 +2,7 @@
 let progressBars = document.querySelectorAll(".progressBar");
 let playbackBar = document.querySelector(".playbackBar");
 let playButtons = document.querySelectorAll(".playButton");
-let download = document.querySelector(".download");
+let download = document.querySelectorAll(".download");
 let volumeButtons = document.querySelectorAll(".volume");
 let share = document.querySelector(".share");
 let mute = document.querySelectorAll(".mute");
@@ -15,13 +15,12 @@ let timers = document.querySelector('.timer')
 function playAudio() {
     audio = this.closest('.rightSide').previousElementSibling.previousElementSibling;
     image = this
-    console.log(image)
     if (audio.paused) {
         audio.play();
-        this.src = "/static/main/img/controls/player-play.png";
+        this.src = "/static/main/img/controls/player-pause.png";
       } else {
         audio.pause();
-        this.src = "/static/main/img/controls/player-pause.png";
+        this.src = "/static/main/img/controls/player-play.png";
       }
 };
 
@@ -81,4 +80,5 @@ audios.forEach(audio => {
     })
 });
 
-mute.forEach(element => element.addEventListener('click', () => {muteAudio(element);}, ))
+mute.forEach(element => element.addEventListener('click', () => {muteAudio(element);}, ));
+
