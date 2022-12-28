@@ -39,7 +39,7 @@ geluid op hover zetten zou hard zijn.
 .audioStreamWrapper {
     display: flex;
     border-color: #272b2c3f;
-    border-width: 5px;
+    border-width: 3px;
     border-style: solid;
 }
 
@@ -53,6 +53,7 @@ geluid op hover zetten zou hard zijn.
     width: 600px;
     background-color: #323234;
     display: flex;
+    justify-content: space-between;
     align-items: center;
 }
 
@@ -221,4 +222,24 @@ geluid op hover zetten zou hard zijn.
     color: white;
     background-color: #323234;
     border: none;
+}
+
+.tag {
+    font-size: small;
+    border-style: dashed;
+    text-align: center;
+    min-width: 77px;
+    padding: 2px;
+    margin-left: 5px;
+    margin-right: 5px;
+    border-color: black;
+    color: #d8d8d8;
+    background-color: black;
+    border: 10px white;
+    cursor: pointer;
+    border-radius: 1px;
+}
+
+.tag:hover {
+    background-color: rgb(145, 145, 145);
 }

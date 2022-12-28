@@ -14,7 +14,17 @@ def secret(request):
     return render(request, 'main/secret.html')
 
 def mixes(request):
-    context = {'MixModel':MixModel.objects.all()}
+    if request.method == 'GET':
+        context = {'MixModel':MixModel.objects.all(), 'genreList':MixModel.objects.values('tag').distinct()}
+
+    elif request.method == 'POST':
+        tag = request.POST.get('genre')
+        if tag == "":
+            context = {'MixModel':MixModel.objects.all(), 'genreList':MixModel.objects.values('tag').distinct()}
+        
+        else:
+            context = {'MixModel':MixModel.objects.filter(tag=tag), 'genreList':MixModel.objects.values('tag').distinct()}
+
     return render(request, 'main/mixes.html', context)
 
 def about(request):

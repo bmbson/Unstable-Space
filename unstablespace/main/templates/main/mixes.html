@@ -7,19 +7,22 @@
 <div class="flexWrapper">
     <ul class="mixList">
         <div class="selectionMenu">
-            <input type="text" id="searchBar">
-   
-            <select name="series" id="dropDownTags">
-                {% for MixModel in MixModel %}
-                    <option value="{{ MixModel.tag }}">{{ MixModel.tag }}</option>
-                {% endfor %}
-            </select>
-            <select name="selectBy" id="sortBy">
-                <option value="oldest">Sort by Oldest</option>
-                <option value="newest">Sort by Newest</option>
-            </select>
+            <form method="POST" action="/mixes">
+                {% csrf_token %}
+                <input name="search" type="text" id="searchBar">
+                <select name="genre" id="dropDownTags">
+                    <option value=""></option>
+                    {% for genre in genreList %}
+                    <option value="{{ genre.tag }}">{{ genre.tag }}</option>
+                    {% endfor %}
+                </select>
+                <select name="selectBy" id="sortBy">
+                    <option value="oldest">Sort by Newest</option>
+                    <option value="newest">Sort by Oldest</option>
+                </select>
+            </form>
         </div>
-        {% for MixModel in MixModel  reversed %}
+        {% for MixModel in MixModel reversed %}
         <li class='mixListItem'>
             <div class="audioStreamWrapper">
                 <audio class="audio" src="{{ MixModel.audio.url }}" id="{{ MixModel.id }}" state="paused"></audio>
@@ -27,6 +30,7 @@
                 <div class="rightSide">
                     <div class="topBar">
                         <div class="playbackBar">{{MixModel.title}}</div>
+                        <div class="tag">{{MixModel.tag}}</div>
                     </div>
                     <div class="middleBar">
                         <input class="progressBar" type="range" class="time" value="0">
