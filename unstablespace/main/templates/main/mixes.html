@@ -7,19 +7,23 @@
 <div class="flexWrapper">
     <ul class="mixList">
         <div class="selectionMenu">
-            <form method="POST" action="/mixes">
+            <form class="searchForm" method="POST" action="/mixes">
                 {% csrf_token %}
                 <input name="search" type="text" id="searchBar">
                 <select name="genre" id="dropDownTags">
                     <option value=""></option>
                     {% for genre in genreList %}
-                    <option value="{{ genre.tag }}">{{ genre.tag }}</option>
+                        {% if genre.tag != '' %}
+                        <option value="{{ genre.tag }}">{{ genre.tag }}</option>
+                        {% endif %}
                     {% endfor %}
+                   
                 </select>
                 <select name="selectBy" id="sortBy">
-                    <option value="oldest">Sort by Newest</option>
-                    <option value="newest">Sort by Oldest</option>
+                    <option value="newest">Sort by Newest</option>
+                    <option value="oldest">Sort by Oldest</option>
                 </select>
+                <button id="submitButton">Search</button>
             </form>
         </div>
         {% for MixModel in MixModel reversed %}
@@ -30,7 +34,12 @@
                 <div class="rightSide">
                     <div class="topBar">
                         <div class="playbackBar">{{MixModel.title}}</div>
-                        <div class="tag">{{MixModel.tag}}</div>
+                        <div class="tagsWrapper">
+                            {% if MixModel.tag2 != "" %}
+                            <div class="tag">{{MixModel.tag2}}</div>
+                            {% endif %}
+                            <div class="tag">{{MixModel.tag}}</div>
+                        </div>
                     </div>
                     <div class="middleBar">
                         <input class="progressBar" type="range" class="time" value="0">
