@@ -34,12 +34,15 @@
                 <div class="rightSide">
                     <div class="topBar">
                         <div class="playbackBar">{{MixModel.title}}</div>
-                        <div class="tagsWrapper">
-                            {% if MixModel.tag2 != "" %}
-                            <div class="tag">{{MixModel.tag2}}</div>
-                            {% endif %}
-                            <div class="tag">{{MixModel.tag}}</div>
-                        </div>
+                        <form method="POST" action="/mixes">
+                            {% csrf_token %}
+                            <div class="tagsWrapper">
+                                {% if MixModel.tag2 != "" %}
+                                <button name="genre" class="tag" value="{{MixModel.tag2}}">{{MixModel.tag2}}</button>
+                                {% endif %}
+                                <button name="genre" class="tag" value="{{MixModel.tag}}">{{MixModel.tag}}</button>
+                            </div>
+                        </form>
                     </div>
                     <div class="middleBar">
                         <input class="progressBar" type="range" class="time" value="0">

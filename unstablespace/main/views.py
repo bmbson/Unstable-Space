@@ -19,13 +19,13 @@ def mixes(request):
     tag2 = MixModel.objects.values('tag2').distinct()
 
     tagList = tag1.union(tag2)
-
     if request.method == 'GET':
         context = {'MixModel':MixModel.objects.all(), 'genreList':tagList}
 
     elif request.method == 'POST':
         tag = request.POST.get('genre')
-        title = request.POST.get('search')
+        title = "" if request.POST.get('search') == None else request.POST.get('search')
+       
         order = "created_at"
 
         if request.POST.get('selectBy') == 'oldest':
@@ -36,12 +36,23 @@ def mixes(request):
         elif tag == "":
             context = {'MixModel':MixModel.objects.filter(title__contains=title).order_by(order), 'genreList':tagList}
         elif title == "":
-            context = {'MixModel':MixModel.objects.filter(Q(tag=tag) | Q(tag2=tag)).order_by(order), 'genreList':tagList}
+            if tag2 == None:
+                context = {'MixModel':MixModel.objects.filter(tag=tag).order_by(order), 'genreList':tagList}
+            else:
+                context = {'MixModel':MixModel.objects.filter(Q(tag=tag) | Q(tag2=tag)).order_by(order), 'genreList':tagList}
         else:
             context = {'MixModel':MixModel.objects.filter(title__contains=title).filter(Q(tag=tag) | Q(tag2=tag)).order_by(order), 'genreList':tagList}
 
     return render(request, 'main/mixes.html', context)
 
+def tagClicked(request):
+    tag1 = MixModel.objects.values('tag').distinct()
+    tag2 = MixModel.objects.values('tag2').distinct()
+
+    tagList = tag1.union(tag2)
+
+
+    return render(request, 'main/mixes.html', context)
 def about(request):
     return render(request, 'main/about.html')
 

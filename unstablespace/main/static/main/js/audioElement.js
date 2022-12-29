@@ -9,6 +9,7 @@ let mute = document.querySelectorAll(".mute");
 let audios = document.querySelectorAll('.audio');
 let ids = document.querySelectorAll('id')
 let timers = document.querySelector('.timer')
+let tags = document.querySelectorAll('.tag')
 
 //test elements will be migrated to a db
 
@@ -43,6 +44,10 @@ function calculateTime(secs) {
     const returnedSeconds = seconds < 10 ? `0${seconds}` : `${seconds}`;
     return `${minutes}:${returnedSeconds}`;
 };
+
+function tagClick(div) {
+
+}
 
 playButtons.forEach(playButton => {
     playButton.addEventListener('click', playAudio, false);
@@ -81,4 +86,5 @@ audios.forEach(audio => {
 });
 
 mute.forEach(element => element.addEventListener('click', () => {muteAudio(element);}, ));
+
 
