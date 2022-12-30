@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static '/mixadmin/mixadminlogin.css' %}">
+    {% block css %} {% endblock %}
+    {% block js %}{% endblock %}
+    <title>{% block title%} {% endblock %}</title>
+</head>
+<body>
+    <header>
+    </header>
+    <main>
+        <div id="formWrapper">
+            <h1 id="title">Unstable Space</h1>
+            <h2 id="lower">MixAdmin Panel</h2>
+            {% if messages %}
+            <ul class="messages">
+            {% for message in messages %}
+                <li{% if message.tags %} class="message"{% endif %}>{{ message }}</li>
+            {% endfor %}
+            </ul>
+            {% endif %}
+            <form action="/mixadminlogin" method="POST">
+                {% csrf_token %}
+                {{ form }}
+                <input id="submit" type="submit" value="Submit">
+            </form>
+        </div>
+    </main>
+</body>
+</html>

@@ -271,3 +271,12 @@ geluid op hover zetten zou hard zijn.
     margin-right: 5px;
     gap: 2px;
 }
+
+.selectWrapper {
+    display: flex;
+}
+
+.selectText {
+    margin-right: 3px;
+    align-self: center;
+}

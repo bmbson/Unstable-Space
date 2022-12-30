@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@1,300&display=swap');
+
+:root {
+    --main: #030405;
+    --text: #FBFEF9;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Nunito', sans-serif;
+    background-image: linear-gradient(90deg, #161616, #505050, #161616, #505050);
+    background-size: 300% 100%;
+    animation: animateBg 10s infinite linear;
+}
+
+main {
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+#title {
+    text-align: center;
+}
+
+#lower {
+    text-align: center;
+}
+
+#formWrapper {
+    background-color: rgba(128, 128, 128, 0.452);
+    padding: 30px;
+    color: white;
+}
+
+#submit {
+    color: white;
+    background-color: #323234;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+}
+
+#submit:hover {
+    background-color: rgb(145, 145, 145);
+}
+
+.message {
+    color: rgb(206, 0, 0);
+    text-align: center;
+    list-style: none;
+    background-color: black;
+
+}
+
+.messages {
+    padding: 0;
+}
+
+h1, h2 {
+    margin: 5;
+}
+
+h1 {
+    margin-top: 0;
+}
+
+#logoutButton {
+    background-color: red;
+    color: white;
+}
+
+a:visited {
+    color: white;
+}
+
+@keyframes animateBg {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 100% 0;
+  }
+}

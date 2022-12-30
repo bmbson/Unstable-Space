@@ -9,20 +9,29 @@
         <div class="selectionMenu">
             <form class="searchForm" method="POST" action="/mixes">
                 {% csrf_token %}
-                <input name="search" type="text" id="searchBar">
-                <select name="genre" id="dropDownTags">
-                    <option value=""></option>
-                    {% for genre in genreList %}
-                        {% if genre.tag != '' %}
-                        <option value="{{ genre.tag }}">{{ genre.tag }}</option>
-                        {% endif %}
-                    {% endfor %}
-                   
-                </select>
-                <select name="selectBy" id="sortBy">
-                    <option value="newest">Sort by Newest</option>
-                    <option value="oldest">Sort by Oldest</option>
-                </select>
+                <div class="selectWrapper">
+                    <label class="selectText" for="search">Title:</label>
+                    <input name="search" type="text" id="searchBar">
+                </div>
+                <div class="selectWrapper">
+                    <label class="selectText" for="search">Genre:</label>
+                    <select name="genre" id="dropDownTags">
+                        <option value=""></option>
+                        {% for genre in genreList %}
+                            {% if genre.tag != '' %}
+                            <option value="{{ genre.tag }}">{{ genre.tag }}</option>
+                            {% endif %}
+                        {% endfor %}  
+                    </select>
+                </div>
+
+                <div class="selectWrapper">
+                    <label class="selectText" for="selectBy">Sort:</label>
+                    <select name="selectBy" id="sortBy">
+                        <option value="newest">Sort by Newest</option>
+                        <option value="oldest">Sort by Oldest</option>
+                    </select>
+                </div>
                 <button id="submitButton">Search</button>
             </form>
         </div>

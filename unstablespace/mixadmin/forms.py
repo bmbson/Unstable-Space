@@ -5,3 +5,7 @@ class Mix(forms.Form):
     image = forms.ImageField()
     audio = forms.FileField()
     tag = forms.CharField(max_length=20)
+
+class Login(forms.Form):
+    username = forms.CharField(max_length=50)
+    password = forms.CharField(widget=forms.PasswordInput)
