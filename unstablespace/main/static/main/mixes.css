@@ -280,3 +280,7 @@ geluid op hover zetten zou hard zijn.
     margin-right: 3px;
     align-self: center;
 }
+
+li.bottomMenuItem {
+    cursor: pointer;
+}

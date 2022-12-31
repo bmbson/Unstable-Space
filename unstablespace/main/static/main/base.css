@@ -59,6 +59,10 @@ li:hover {
     cursor: hover;
 }
 
+.bottomMenuItem {
+    cursor: pointer;
+}
+
 footer {
     background-color: var(--main);
     display: flex;

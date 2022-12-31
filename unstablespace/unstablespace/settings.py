@@ -21,10 +21,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-uuydt!6w*=kxi@q6y9y==82@50do6dvvq17c!y5sozg8z4nufr'
+SECRET_KEY = 'C*J2KX$5@Pc5SSgMMPg!JRP6z@FQXUQshLA7tHMHgHxyLXxmtiBDvvi#Uk**Zycc9pHxGP9LKst!BYii2XZkqvoCK2s4BQU5^^M'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
@@ -83,7 +83,6 @@ DATABASES = {
     }
 }
 
-
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
 
@@ -131,3 +130,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 LOGOUT_REDIRECT_URL = 'mixadminlogin'
 LOGIN_URL = 'mixadminlogin'
 
+CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = True
+SECURE_SSL_REDIRECT = True
