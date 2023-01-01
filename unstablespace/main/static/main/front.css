@@ -42,7 +42,7 @@
 }
 
 .bottomLeftContentText{
-    font-size: 60px;
+    font-size: 40px;
     font-family: 'Montserrat', sans-serif;
     text-shadow: 1px 2px 1px black;
     color: --var(--texttransparant);
@@ -61,7 +61,7 @@
 }
 
 .bottomRightContentText{
-    font-size: 60px;
+    font-size: 40px;
     font-family: 'Montserrat', sans-serif;
     text-shadow: 1px 2px 1px black;
     color: --var(--texttransparant);
