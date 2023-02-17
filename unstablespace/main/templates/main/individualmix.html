@@ -1,0 +1,78 @@
+{% extends 'main/base.html' %}
+
+{% block css %} {% load static %} <link rel="stylesheet" href="{% static '/main/individualmix.css' %}"> {% endblock %}
+{% block js%} {% endblock %}
+{% block title %} Unstable Space | --- {% endblock %}
+
+{% block main %}
+<div id="flexWrapper">
+    <div id="leftSide">
+        <div id="thumbnail"></div>
+        <div id="mixTitle"><h2>Blah Blah Mix Title</h2></div>
+        <div id="infoWrapper">
+            <div class="genreID">Genre 1</div>
+            <div class="genreID">Genre 2</div>
+            <div id="date">1999/06/09</div>
+            <div id="creator">creator: eza</div>
+        </div>
+    </div>
+    <div id="rightSide">
+        <div id="trackListWrapper">
+            <div id="trackListTitle"><p>TRACKLIST</p></div>
+            <ul id="trackList">
+                <li>
+                    <div class="artistName">Eza</div>
+                    <div class="trackName">VVS</div>
+                </li>
+                <li>
+                    <div class="artistName">Eza</div>
+                    <div class="trackName">VVS</div>
+                </li>
+                <li>
+                    <div class="artistName">Eza</div>
+                    <div class="trackName">VVS</div>
+                </li>
+                <li>
+                    <div class="artistName">Eza</div>
+                    <div class="trackName">VVS</div>
+                </li>
+                <li>
+                    <div class="artistName">Eza</div>
+                    <div class="trackName">VVS</div>
+                </li>
+                <li>
+                    <div class="artistName">Eza</div>
+                    <div class="trackName">VVS</div>
+                </li>
+                <li>
+                    <div class="artistName">Eza</div>
+                    <div class="trackName">VVS</div>
+                </li>
+                <li>
+                    <div class="artistName">Eza</div>
+                    <div class="trackName">VVS</div>
+                </li>
+                <li>
+                    <div class="artistName">Eza</div>
+                    <div class="trackName">VVS</div>
+                </li>
+                <li>
+                    <div class="artistName">Eza</div>
+                    <div class="trackName">VVS</div>
+                </li>
+                <li>
+                    <div class="artistName">Eza</div>
+                    <div class="trackName">VVS</div>
+                </li>
+                <li>
+                    <div class="artistName">Eza</div>
+                    <div class="trackName">VVS</div>
+                </li>
+                <li>
+                    <div class="artistName">Eza</div>
+                    <div class="trackName">VVS</div>
+                </li>
+        </div>
+    </div>
+</div>
+{% endblock %}

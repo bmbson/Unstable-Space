@@ -53,6 +53,7 @@ def tagClicked(request):
 
 
     return render(request, 'main/mixes.html', context)
+
 def about(request):
     return render(request, 'main/about.html')
 
@@ -62,5 +63,9 @@ def merch(request):
 def blog(request):
     return render(request, 'main/blog.html')
 
-def privacypolicy(request):
+def privacyPolicy(request):
     return render(request, 'main/privacypolicy.html')
+
+def individualMix(request, mixName):
+    return render(request, 'main/individualmix.html')
+    
