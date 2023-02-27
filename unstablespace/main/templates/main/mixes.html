@@ -42,7 +42,7 @@
                 <div class="audioStreamImage"><img src='{{ MixModel.image.url }}' class="thumbnailImage"></div>
                 <div class="rightSide">
                     <div class="topBar">
-                        <div class="playbackBar">{{MixModel.title}}</div>
+                        <div class="playbackBar"><a class="titleLink" href="mixes/{{MixModel.title}}" target="_blank">{{MixModel.title}}</div></a>
                         <form method="POST" action="/mixes">
                             {% csrf_token %}
                             <div class="tagsWrapper">

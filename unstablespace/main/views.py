@@ -1,5 +1,8 @@
 from django.shortcuts import render
 from mixadmin.models import MixModel
+from mixadmin.models import TrackToMix
+from mixadmin.models import Track
+from django.shortcuts import get_object_or_404
 from django.db.models import Q
 
 def frontPage(request):
@@ -67,5 +70,13 @@ def privacyPolicy(request):
     return render(request, 'main/privacypolicy.html')
 
 def individualMix(request, mixName):
-    return render(request, 'main/individualmix.html')
+    reqMixModel = get_object_or_404(MixModel, title=mixName)
+    
+    trackList = Track.objects.filter(tracktomix__playlistId=reqMixModel.pk)
+    if not trackList:
+        context = {'MixModel':reqMixModel}
+        return render(request, 'main/noplaylistavailablemix.html', context)
+    else:
+        context = {'MixModel':reqMixModel, 'trackList':trackList}
+        return render(request, 'main/individualmix.html', context)
     

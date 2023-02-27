@@ -11,24 +11,25 @@ main {
 #flexWrapper {
     display: flex;
     flex-direction: row;
+    justify-content: center;
     width: 80%;
-    height: 80%;
+    height: 90%;
 }
 
 #leftSide {
-    background-color: purple;
+    background-color: #323234;
     width: 50%;
     height: 100%;
 }
 
 #rightSide {
-    background-color: blue;
-    width: 50%;
+    background-color: #5f5f61;
+    width: 25%;
     height: 100%;
 }
 
 #trackListWrapper {
-    background-color: green;
+    background-color: #5f5f61;
     max-height: 100%;
     margin: 0;
     display: flex;
@@ -54,7 +55,7 @@ main {
 }
 
 #infoWrapper {
-    background-color: cornflowerblue;
+    background-color: #7a7a7e;
     height: 50px;
     width: 100%;
     justify-content: space-around;
@@ -63,13 +64,16 @@ main {
 }
 
 #thumbnail {
-    background-color: aquamarine;
+    background-color: #d2d2d8;
     width: 100%;
     height: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 #trackList li {
-    background-color: red;
+    background-color: #a8a8ac;
 }
 
 .artistName {
@@ -81,8 +85,9 @@ main {
 }
 
 #trackListTitle p {
-    font-size: 50px;
+    font-size: 25px;
     margin: 0;
+    text-align: center;
 }
 
 .genreID {
@@ -107,3 +112,4 @@ main {
 .genreID:hover {
     background-color: rgb(145, 145, 145);
 }
+
