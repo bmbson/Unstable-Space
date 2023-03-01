@@ -70,8 +70,7 @@ def privacyPolicy(request):
     return render(request, 'main/privacypolicy.html')
 
 def individualMix(request, mixName):
-    reqMixModel = get_object_or_404(MixModel, title=mixName)
-    
+    reqMixModel = get_object_or_404(MixModel, title=mixName) 
     trackList = Track.objects.filter(tracktomix__playlistId=reqMixModel.pk)
     context = {'MixModel':reqMixModel, 'trackList':trackList}
     return render(request, 'main/individualmix.html', context)

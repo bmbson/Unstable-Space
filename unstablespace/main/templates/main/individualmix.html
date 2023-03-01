@@ -31,9 +31,9 @@
                     <form id="tagForm" method="POST" action="/mixes">
                         {% csrf_token %}
                         {% if MixModel.tag2 != "" %}
-                        <div class="genreID" value="{{MixModel.tag2}}">{{MixModel.tag2}}</div>
+                        <button name="genre" class="genreID" value="{{MixModel.tag2}}">{{MixModel.tag2}}</button>
                         {% endif %}
-                        <div class="genreID" value="{{MixModel.tag1}}">{{MixModel.tag}}</div>
+                        <button name="genre" class="genreID" value="{{MixModel.tag1}}">{{MixModel.tag}}</button>
                     </form>
                     <div id="date">{{MixModel.date}}</div>
                     <div id="creator">{{MixModel.creator}}</div>

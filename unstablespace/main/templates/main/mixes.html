@@ -39,7 +39,7 @@
         <li class='mixListItem'>
             <div class="audioStreamWrapper">
                 <audio class="audio" src="{{ MixModel.audio.url }}" id="{{ MixModel.id }}" state="paused"></audio>
-                <div class="audioStreamImage"><img src='{{ MixModel.image.url }}' class="thumbnailImage"></div>
+                <a class="titleLink" href="mixes/{{MixModel.title}}" target="_blank"> <div class="audioStreamImage"><img src='{{ MixModel.image.url }}' class="thumbnailImage"></div></a>
                 <div class="rightSide">
                     <div class="topBar">
                         <div class="playbackBar"><a class="titleLink" href="mixes/{{MixModel.title}}" target="_blank">{{MixModel.title}}</div></a>

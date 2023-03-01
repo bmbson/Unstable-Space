@@ -163,6 +163,10 @@ geluid op hover zetten zou hard zijn.
     object-fit: fill;
 }
 
+.thumbnailImage:hover {
+    cursor: pointer;
+}
+
 .timer {
     display: flex;
     align-items: center;
@@ -280,3 +284,8 @@ geluid op hover zetten zou hard zijn.
     margin-right: 3px;
     align-self: center;
 }
+
+.titleLink:hover{
+    cursor: pointer;
+}
+
