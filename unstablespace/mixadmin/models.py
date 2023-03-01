@@ -4,12 +4,14 @@ import os
 # Create your models here.
 class MixModel(models.Model):
     title = models.CharField(max_length=50, unique=True)
+    description = models.TextField(default="No description available.")
     creator = models.CharField(max_length=50)
     image = models.ImageField(upload_to='images/')
+    backgroundImg = models.ImageField(upload_to='images/')
     audio = models.FileField(upload_to='audio/')
     tag = models.CharField(max_length=25, blank=True)
     tag2 = models.CharField(max_length=25, blank=True)
-    date = models.DateTimeField(auto_now_add=True)
+    created_at = models.DateTimeField(auto_now_add=True)
 
 
 class Track(models.Model):

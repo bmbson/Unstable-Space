@@ -73,10 +73,6 @@ def individualMix(request, mixName):
     reqMixModel = get_object_or_404(MixModel, title=mixName)
     
     trackList = Track.objects.filter(tracktomix__playlistId=reqMixModel.pk)
-    if not trackList:
-        context = {'MixModel':reqMixModel}
-        return render(request, 'main/noplaylistavailablemix.html', context)
-    else:
-        context = {'MixModel':reqMixModel, 'trackList':trackList}
-        return render(request, 'main/individualmix.html', context)
+    context = {'MixModel':reqMixModel, 'trackList':trackList}
+    return render(request, 'main/individualmix.html', context)
     

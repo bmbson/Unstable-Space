@@ -1,22 +1,50 @@
 {% extends 'main/base.html' %}
 
 {% block css %} {% load static %} <link rel="stylesheet" href="{% static '/main/individualmix.css' %}"> {% endblock %}
-{% block js%} {% endblock %}
 {% block title %} Unstable Space | {{MixModel.title}} {% endblock %}
 
 {% block main %}
 <div id="flexWrapper">
     <div id="leftSide">
-
-        <div id="thumbnail">
-            
+        <div id="topBar" style='background-image: url( "{{MixModel.backgroundImg.url}}')>
+            <img id="playButton" src="{% static 'main/img/controls/player-play.png' %}" alt="">
+            <img id="thumbnailImg" src="{{MixModel.image.url}}" alt="">
         </div>
-        <div id="mixTitle"><h2>{{MixModel.title}}</h2></div>
-        <div id="infoWrapper">
-            <div class="genreID" value="{{MixModel.tag2}}">{{MixModel.tag2}}</div>
-            <div class="genreID" value="{{MixModel.tag1}}">{{MixModel.tag}}</div>
-            <div id="date">{{MixModel.date}}</div>
-            <div id="creator">{{MixModel.creator}}</div>
+        <div id="middleBar">
+            <audio class="audio" src="{{ MixModel.audio.url }}" id="{{ MixModel.id }}" state="paused"></audio>
+            <div id="mixTitle">
+                <h2>{{MixModel.title}}</h2>
+            </div>
+            <div id="playbackBar">
+                <input class="progressBar" type="range" class="time" value="0">
+            </div>
+            <div id="infoWrapper">
+                <div id="controls">
+                    <img id="play" class="control" src="{% static 'main/img/controls/player-play.png' %}" alt="">
+                    <img id="mute" class="control" src="{% static 'main/img/controls/high-volume.png' %}" alt="">
+                    <input id="volume" type="range" class="time" value="75">
+                    <a class="download" href="{{ MixModel.audio.url }}" download><img class="download" src="{% static 'main/img/controls/download.png' %}" alt=""></a>
+                    <img id="share" class="control" src="{% static 'main/img/controls/share.png' %}" alt="">
+                </div>
+                <div class="timer">0:00 / 0:00</div>
+                <div id="genreTagsWrapper">
+                    <form id="tagForm" method="POST" action="/mixes">
+                        {% csrf_token %}
+                        {% if MixModel.tag2 != "" %}
+                        <div class="genreID" value="{{MixModel.tag2}}">{{MixModel.tag2}}</div>
+                        {% endif %}
+                        <div class="genreID" value="{{MixModel.tag1}}">{{MixModel.tag}}</div>
+                    </form>
+                    <div id="date">{{MixModel.date}}</div>
+                    <div id="creator">{{MixModel.creator}}</div>
+                </div>
+            </div>
+            <div id="divider"></div>
+        </div>
+
+        <div id="bottomBar">
+            <h2 id="description">Description</h2>
+            <div id="textDiv"><p>{{MixModel.description}}</p></p></div>
         </div>
     </div>
     <div id="rightSide">
@@ -24,7 +52,7 @@
             <div id="trackListTitle"><p>TRACKLIST</p></div>
             <ul id="trackList">
                 {% for tracks in trackList %}
-                <li>
+                <li class="songInfo">
                     <div class="artistName">{{tracks.trackTitle}}</div>
                     <div class="trackName">{{tracks.artist}}</div>
                 </li>
@@ -33,4 +61,7 @@
         </div>
     </div>
 </div>
+{% endblock %}
+{% block js%} 
+{% load static %} <script type="text/javascript" src="{% static '/main/js/individualMix.js' %}"></script>
 {% endblock %}
